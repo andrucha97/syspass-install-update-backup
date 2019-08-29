@@ -245,10 +245,22 @@ case $start in
 			echo "Installing..."
 			sleep 5
 			$script -ci=$COMMITID -su=$user -p=$path
-			cp -ra /opt/syspass-install-update-backup/images/ $path/public/
-			chown -R $user:$user $path/public/
-			chmod -R 750 $path/public/images/
 
+			logopath=/opt/syspass-install-update-backup/images
+
+			if [ -d $logopath ]; then
+
+				if [ -f $logopath/logo_icon.png ] && [ -f $logopath/logo_full_nobg_outline.png ] && [ -f $logopath/logo_full_nobg_outline_color.png ]; then
+
+					mv $path/public/images $path/public/images-old
+					cp -ra $logopath $path/public/
+					chown -R $user:$user $path/public
+					chmod -R 750 $path/public/images
+					echo "Successfully copied your own logo"
+
+				fi
+
+			fi
 
 		;;
 

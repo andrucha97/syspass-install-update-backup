@@ -17,7 +17,7 @@ chmod +x /opt/syspass-install-update-backup/update-pro.sh
 
 Your own logo:
 
-You can add your own logo to sysPass. Replace the logos in `/opt/syspass-install-update-backup/images/` with your own. Rename your logos to the exact same name as the standard logos. You only need to do this once.
+You can add your own logo to sysPass. Add your logos in `/opt/syspass-install-update-backup/images/` with your own. Rename your logos to the exact same name as the standard logos. You only need to do this once.
 
 Start Script:
 ```
