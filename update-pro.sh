@@ -197,7 +197,7 @@ case $start in
 			if [ -f $path/lib/SP/Services/Install/Installer.php  ]; then
 
 				installedversion=$(grep -rwn $path/lib/SP/Services/Install/Installer.php -e 'const BUILD =' | cut -d " " -f "8" | cut -d ";" -f "1")
-				selectedversion=$(curl -s https://raw.githubusercontent.com/nuxsmin/sysPass/$version/lib/SP/Services/Install/Installer.php | grep -P 'const BUILD =' | cut -d " " -f "8" | cut -d ";" -f "1")
+				selectedversion=$(curl -s https://raw.githubusercontent.com/nuxsmin/sysPass/master/lib/SP/Services/Install/Installer.php | grep -P 'const BUILD =' | cut -d " " -f "8" | cut -d ";" -f "1")
 
 				if [ $installedversion -ge $selectedversion ]; then
 
